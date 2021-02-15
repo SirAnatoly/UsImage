@@ -1,1 +1,6 @@
 /nb-configuration.xml
+/usimage-common/target/
+/usimage-model/target/
+/usimage-web/target/
+/usimage-ejb/target/
+/usimage-ear/target/
