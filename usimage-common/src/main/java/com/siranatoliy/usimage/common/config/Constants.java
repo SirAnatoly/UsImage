@@ -14,26 +14,21 @@
  * limitations under the License.
  */
 
-package com.siranatoliy.usimage.common.resource;
+package com.siranatoliy.usimage.common.config;
 
-import java.io.IOException;
-import java.io.InputStream;
-import javax.enterprise.inject.Vetoed;
+import java.util.concurrent.TimeUnit;
 
 /**
+ * Main constants
+ * 
  * @author Anatoliy Kovalv
  * @version 1.0 
- */ 
+ */
+public final class Constants {
 
-@Vetoed
-public interface ResourceLoader {
+    public static final long MAX_UPLOADED_PHOTO_SIZE_IN_BYTES = 10 * 1024 * 1024; // 10 Mb
+    
+    public static final long DEFAULT_ASYNC_OPERATION_TIMEOUT_IN_MILLIS = TimeUnit.SECONDS.toMillis(30);
 
-    /**
-     * 
-     * @param resourceName string name of the resource
-     * @return true if the current loader knows how to load it
-     */
-    boolean isSupport(String resourceName);
-
-    InputStream getInputStream(String resourceName) throws IOException;
+    private Constants(){}
 }

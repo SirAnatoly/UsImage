@@ -21,6 +21,7 @@ import java.io.InputStream;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.enterprise.inject.Vetoed;
 import javax.inject.Inject;
 
 /**
@@ -29,6 +30,7 @@ import javax.inject.Inject;
  * @author Anatoliy Kovalv
  * @version 1.0 
  */  
+@Vetoed
   abstract class AbstractPropertiesLoader {
 
     @Inject

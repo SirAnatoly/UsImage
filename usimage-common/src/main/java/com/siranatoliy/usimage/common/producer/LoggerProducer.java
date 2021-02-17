@@ -16,6 +16,7 @@
 package com.siranatoliy.usimage.common.producer;
 
 import java.util.logging.Logger;
+import javax.enterprise.context.Dependent;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
 
@@ -23,6 +24,7 @@ import javax.enterprise.inject.spi.InjectionPoint;
  * @author Anatoliy Kovalv
  * @version 1.0 
  */  
+@Dependent
 public class LoggerProducer {
 
     @Produces

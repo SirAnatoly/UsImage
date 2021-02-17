@@ -18,6 +18,7 @@ package com.siranatoliy.usimage.common.producer;
 
 import com.siranatoliy.usimage.common.annotation.cdi.Property;
 import com.siranatoliy.usimage.exception.ConfigException;
+import javax.enterprise.context.Dependent;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
 import javax.inject.Inject;
@@ -29,6 +30,8 @@ import javax.inject.Inject;
  * @author Anatoliy Kovalv
  * @version 1.0 
  */  
+
+@Dependent
 public class PropertyProducer {
 
     @Inject
