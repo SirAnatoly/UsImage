@@ -16,8 +16,10 @@
 
 package com.siranatoliy.usimage.ejb.repository.mock;
 
+import com.siranatoliy.usimage.ejb.repository.AccessTokenRepository;
 import com.siranatoliy.usimage.ejb.repository.PhotoRepository;
 import com.siranatoliy.usimage.ejb.repository.ProfileRepository;
+import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import javax.enterprise.context.Dependent;
 import javax.enterprise.inject.Produces;
@@ -48,5 +50,13 @@ public class InMemoryRepositoryFactory {
     public PhotoRepository getPhotoRepository(){
         return (PhotoRepository) Proxy.newProxyInstance(getClass().getClassLoader(), 
                 new Class[]{PhotoRepository.class}, photoRepositoryInvocationHandler);
+    }
+    
+    @Produces
+    public AccessTokenRepository getAccessTokenRepository(){
+        return (AccessTokenRepository) Proxy.newProxyInstance(getClass().getClassLoader(), 
+                new Class[]{AccessTokenRepository.class}, (Object proxy, Method method, Object[] args) -> {
+                    throw new UnsupportedOperationException("Not implemented yet.");
+        });
     }
 }
